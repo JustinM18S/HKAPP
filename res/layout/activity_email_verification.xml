@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/emailverify"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/verifybg"
+    tools:context=".Email_Verification">
+
+    <!-- Logo Image -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="200dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/logo_desc"
+        android:src="@drawable/applogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Title TextView with Back Arrow -->
+    <TextView
+        android:id="@+id/backtoforgotpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:onClick="goBackToForgotPassword"
+        android:text="@string/verify_email"
+        android:textColor="#172815"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/ic_back_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+
+    <!-- Subtitle TextView -->
+
+
+    <!-- Enter code -->
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="60dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:gravity="center"
+        android:text="@string/verify_description"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backtoforgotpassword" />
+
+    <!-- Verify Button -->
+
+    <TextView
+        android:id="@+id/codelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="@string/EnterCode"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtitle" />
+
+    <!-- Resend Code -->
+
+    <Button
+        android:id="@+id/verify_button"
+        android:layout_width="161dp"
+        android:layout_height="62dp"
+        android:backgroundTint="@color/dark_green"
+        android:fontFamily="@font/poppinsbold"
+        android:text="@string/verify"
+        android:textColor="#C1DBB8"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:endIconMode="password_toggle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resendcode" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvcode"
+        android:layout_width="336dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:textColorHint="#172815"
+        app:boxBackgroundColor="#DDECD7"
+        app:endIconMode="password_toggle"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/codelabel">
+
+        <!-- Enter your Code Layout -->
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="332dp"
+            android:layout_height="58dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableEnd="@drawable/ic_pass"
+            android:fontFamily="@font/poppinsmedium"
+            android:hint="@string/EnterCode"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            tools:ignore="VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/resendcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppinsregular"
+        android:minHeight="48dp"
+        android:text="@string/ResendCode"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvcode" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

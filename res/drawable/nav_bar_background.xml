@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Inner Shadow at the top of the Bottom Navigation Bar -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+            <padding
+                android:left="2dp"
+                android:top="2dp"
+                android:right="2dp"
+                android:bottom="0dp" />
+            <corners
+                android:topLeftRadius="50dp"
+                android:topRightRadius="50dp"
+                android:bottomLeftRadius="0dp"
+                android:bottomRightRadius="0dp" />
+            <gradient
+                android:startColor="#80AB9A9A"
+            android:endColor="@android:color/transparent"
+            android:angle="270" />
+        </shape>
+    </item>
+
+    <!-- Green background color with rounded top corners -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#8EC885" /> <!-- Green background color -->
+            <corners
+                android:topLeftRadius="50dp"
+                android:topRightRadius="50dp"
+                android:bottomLeftRadius="0dp"
+                android:bottomRightRadius="0dp" /> <!-- Rounded top corners -->
+        </shape>
+    </item>
+
+</layer-list>

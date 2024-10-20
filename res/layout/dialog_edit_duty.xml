@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/rounded_corners_background">
+
+    <!-- EditText for Date -->
+    <EditText
+        android:id="@+id/editDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxWidth="488dp"
+        android:autofillHints=""
+        android:hint="@string/enter_date"
+        android:inputType="date"
+        android:minHeight="48dp"
+        android:textColorHint="#C7000000"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <!-- EditText for Time -->
+    <EditText
+        android:id="@+id/editTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/enter_time"
+        android:inputType="time"
+        android:minHeight="48dp"
+        android:textColorHint="#C7000000"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <!-- EditText for Room -->
+    <EditText
+        android:id="@+id/editRoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/enter_room"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#C7000000"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <!-- EditText for Professor -->
+    <EditText
+        android:id="@+id/editProfessor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/enter_professor_s_name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="#000"
+        android:textColorHint="#C7000000"
+        tools:ignore="VisualLintTextFieldSize" />
+
+
+</LinearLayout>

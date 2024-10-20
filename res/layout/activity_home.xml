@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/HomePage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/homebg"
+    tools:context=".HomeActivity">
+
+
+    <!-- Header: Logo, Welcome Message, and Profile Icon -->
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="235dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/logo_desc"
+        android:src="@drawable/applogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/welcomeMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="@string/HiScholars"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoImage" />
+
+    <ImageView
+        android:id="@+id/profileIcon"
+        android:layout_width="50dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="25dp"
+        android:contentDescription="@string/profile_icon"
+        android:src="@drawable/account_profile"
+        app:layout_constraintBottom_toBottomOf="@id/welcomeMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/welcomeMessage" />
+
+
+    <!-- Upcoming Duties Section -->
+
+    <LinearLayout
+        android:id="@+id/summaryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeMessage">
+
+        <!-- Total Time TextView -->
+
+        <!-- Pending Hours TextView -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/summary_box_background"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/completedHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/_75h"
+                android:textColor="#384D35"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/completedLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/total_time"
+                android:textColor="#384D35"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/summary_box_background"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/pendingHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/_15h"
+                android:textColor="#384D35"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pendingLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/pending"
+                android:textColor="#384D35"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/notificationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/notification_background"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/summaryLayout">
+
+        <!-- TextView for the notification text -->
+        <TextView
+            android:id="@+id/notificationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:gravity="start"
+            android:text="@string/check_out_your_schedules_now"
+            android:textColor="#172815"
+            android:textSize="20sp" />
+        <!-- ImageView for the icon -->
+        <ImageView
+            android:id="@+id/notificationIcon"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/hklogo"
+            android:gravity="end"
+            android:src="@drawable/hklogo" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/upcomingDutiesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="@string/upcoming_duties"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notificationLayout" />
+
+    <HorizontalScrollView
+        android:id="@+id/upcomingDutiesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:scrollbars="horizontal"
+        android:fillViewport="true"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upcomingDutiesTitle">
+
+        <LinearLayout
+            android:id="@+id/dutiesContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Example Duty Item -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/duty_item_background"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/dutyDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/monday"
+                    android:textColor="#0F2B0F"
+                    android:textSize="13sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <View
+                    android:id="@+id/separatorView"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.183" />
+
+                <TextView
+                    android:id="@+id/dutyDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/date_10_10_2024"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    android:paddingTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/dutyDay"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/dutyTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/time_10_30_12_00"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/dutyDate"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/assignedRoom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/assigned_room_ptc_404"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/dutyTime"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/assignedProfessor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/assigned_professor_de_vera_angela"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/assignedRoom"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/duty_item_background"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/dutyDay2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/tuesday"
+                    android:textColor="#0F2B0F"
+                    android:textSize="13sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <View
+                    android:id="@+id/separatorView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.183" />
+
+                <TextView
+                    android:id="@+id/dutyDate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/date_10_10_2024"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    android:paddingTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/dutyDay2"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/dutyTime2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/time_10_30_12_00"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/dutyDate2"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/assignedRoom2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/assigned_room_ptc_404"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/dutyTime2"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/assignedProfessor2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/assigned_professor_de_vera_angela"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/assignedRoom2"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/duty_item_background"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/dutyDay3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/wednesday"
+                    android:textColor="#0F2B0F"
+                    android:textSize="13sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <View
+                    android:id="@+id/separatorView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.183" />
+
+                <TextView
+                    android:id="@+id/dutyDate3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/date_10_10_2024"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    android:paddingTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/dutyDay3"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/dutyTime3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/time_10_30_12_00"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/dutyDate3"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/assignedRoom3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/assigned_room_ptc_404"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/dutyTime3"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/assignedProfessor3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/assigned_professor_de_vera_angela"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/assignedRoom3"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/duty_item_background"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/dutyDay5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/thursday"
+                    android:textColor="#0F2B0F"
+                    android:textSize="13sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <View
+                    android:id="@+id/separatorView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.183" />
+
+                <TextView
+                    android:id="@+id/dutyDate5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/date_10_10_2024"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    android:paddingTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/dutyDay5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/dutyTime5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/time_10_30_12_00"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/dutyDate5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/assignedRoom5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/assigned_room_ptc_404"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/dutyTime5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/assignedProfessor5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/assigned_professor_de_vera_angela"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/assignedRoom5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/duty_item_background"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/dutyDay4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/friday"
+                    android:textColor="#0F2B0F"
+                    android:textSize="13sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <View
+                    android:id="@+id/separatorView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.183" />
+
+                <TextView
+                    android:id="@+id/dutyDate4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/date_10_10_2024"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    android:paddingTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/dutyDay4"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/dutyTime4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/time_10_30_12_00"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/dutyDate4"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/assignedRoom4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/assigned_room_ptc_404"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/dutyTime4"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/assignedProfessor4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/assigned_professor_de_vera_angela"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/assignedRoom4"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/nav_bar_background"
+        android:clipToPadding="true"
+        android:elevation="0dp"
+        app:itemIconSize="30dp"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        app:itemHorizontalTranslationEnabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
